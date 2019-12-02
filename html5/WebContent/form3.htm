@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+</head>
+<body>
+<h1>파일 업로드</h1>
+<form action="fileupload.jsp" method="post" enctype="multipart/form-data">
+<!-- 아래와 같이 value로 경로를 줄수도 있지만, 사용자한테 입력을 받게하기 위해서 value값 없애기 -->
+업로드 파일명 : <input type="file" name="upload" multiple> <!--  value="c:/java/b.java"-->
+<!-- 파일 여러개 선택 : multiple="multiple" 속성의 값이 하나밖에 없어서 속성명만 사용함 -->
+<br>
+<input type="submit" value="파일업로드">
+</form>
+</body>
+</html>		

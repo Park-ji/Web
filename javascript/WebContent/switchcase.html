@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script>
+var month = prompt("월을 입력하면 해당월의 일수를 출력합니다.");
+var sp = "&nbsp;";
+//isNan : number든 string이든 형과 상관없이 받은 값에 숫자가 들어있으면 숫자로 생각함 
+if(!isNaN(month)){
+	var day;
+	switch(parseInt(month)){
+	case 1:
+	case 3:
+	case 5:
+	case 7:
+	case 8:
+	case 10:
+	case 12: 
+		day=31;break;
+	case 2: 
+		day=28;break;
+	case 4:
+	case 6:
+	case 9:
+	case 11:
+		day=30;break;
+	default:
+		day=-1;break;
+	}
+}
+else{
+	alert('숫자로만 입력하세요.');
+}
+document.write("입력월은 : "+month+sp+sp+day+"일까지 존재합니다."+br);
+</script>
+</head>
+<body>
+
+</body>
+</html>

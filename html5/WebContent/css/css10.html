@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<style type="text/css">
+/* ol 태그 번호 변경 */
+ol{list-style-type : upper-alpha;}
+ul{list-style-type: disc;}
+/* li 태그 모두 대문자 표현 */
+li{text-transform: uppercase;/*  display:inline; */
+/* border:2px solid red;
+width:100px; */
+/* font-variant: small-caps; */}
+ol ul{
+/* list-style-type: square;*/
+list-style-image: url("../images/smallgoogle.png")
+}
+ol > ol{list-style-type: decimal-leading-zero;}
+</style>
+</head>
+<body>
+<ol>
+	<li>HTML</li>
+	<li>css</li>
+		<ul>
+			<li>select문법</li>
+			<li>style속성문법</li>
+		</ul>
+	<li>java script</li>
+		<ol>
+			<li>자바스크립트</li>
+			<li>jquery</li>
+		</ol>
+</ol>
+<ul>
+<li>1교시</li>
+<li>2교시</li>
+<li>3교시</li>
+</ul>
+</body>
+</html>

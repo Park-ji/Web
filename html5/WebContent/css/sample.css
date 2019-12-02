@@ -1,0 +1,6 @@
+@charset "UTF-8";
+/* 한글 ex)'font-family=궁서'인 경우 한글 안깨지게*/
+/* p{color:red;}
+.third{color:blue;} */
+p{color:yellow;}
+#fourth{color:fuchsia;}

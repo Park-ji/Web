@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>로그인 화면</h1>
+	<!--  
+	form 태그 기능
+	1. 키보드 입력이나 마우스 클릭으로 입력받는 기능	
+	2. 다른 파일(다른 서버)로 전송하는 기능
+	-->
+	<form action="Login.java">
+		<!-- form의 action 속성 : 서버파일명(servlet, jsp)-->
+		<!-- name : 변수명  
+		아이디 입력시, 영문자 대소 + 숫자 - 6~10까지라고 정해주기? pattern 속성
+		[0-9A-Za-z]{6,10} : 0-9또는 A-Z또는 a-z
+		0-9 : 0~9까지 수 중에 하나
+		A-Z : 대문자 A~Z 중에 하나
+		a-z : 소문자 a~z 중에 하나
+		선언시, 띄어쓰기 없이 작성(이유? 공백 있으면 공백 있어야한다고 생각하기 때문에)
+		[1글자에 들어갈수 있는 양식]{전체길이 최소, 최대}
+		-->
+		아이디 입력 : <input type=text maxlength="10" 
+		size=5 title="숫자 또는 대문자 또는 소문자로 최소 6자리부터 최대 10자리까지"
+		placeholder="아이디를 입력해주세요"
+		pattern="[0-9A-Za-z]{6,10}"
+		name ="id">
+		<br>
+		<!-- 
+		title : 툴킷처럼 마우스를 태그위에 올려야 보이는 hint
+		placeholder: android의 hint같은 속성
+		 ==> 단, value값이랑 같이 주면 value가 우선 실행 
+		readonly : 수정 불가
+		disabled : 수정 불가
+		-->
+		암호입력 : <input type=password name="pw"
+		title="숫자 또는 대/소문자 또는 !@#$%^&*포함 8자리"
+		pattern=[0-9A-Za-z!@#$%^&*]{8}><br>
+		폰번호 : <input type=tel name="t"
+		pattern="010-[0-9]{3,4}-[0-9]{4}"><br>
+		수능점수 : <input type=number 
+		min=0 value="50" max=100 step = "10"><br> 
+		
+		<input type="button"value="로그인" name="btn" 
+		onclick="javascript:alert('로그인 버튼 클릭하셨습니다.')"> 
+		<input type="submit" value="전송" name="sub"> 
+		<input type="reset" value="초기화" name="ret">
+		<br>
+		<!-- 크기는 자동으로 조절 되고 맨 처음 보일때 얼만큼 보일지 설정하는 속성(rows,cols) -->
+		<textarea rows="10" cols="20">
+		여기에 입력하시면 됩니다.
+		</textarea>
+	</form>``
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

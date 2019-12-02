@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 모바일 화면에서 글씨 보이게 설정 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+<style type="text/css">
+mark {
+	background-color: aqua;
+}
+</style>
+</head>
+<body>
+	<!-- html5에서 새롭게 추가된 태그
+1) mark : 형광펜 효과 => 해당 태그의 style은 head에 style태그를 활용해서 지정 => css효과 설정!
+	* style 사용법 : 태그명{css속성이름: 속성이 가질수 있는 값;}
+	cf) 배경색상같은 경우 들어갈수 있는 이름있는 색 : 16가지
+	-> 그렇다면 16가지안에 들어가지 않는 색? rgb모드 조합을 사용하고 헥사코드로 바꾼 값을 씀(ex, #ff0033)
+	-> #__(red)__(green)__(blue)
+	-> #00ff00 : green으로만 조합
+2) 이미지에 대한 설명 : figure태그의 figcaption태그
+3) 위첨자과 같은 기능(각주같은 기능) : ruby태그 rt태그 : t는 top
+4) 브라우저 크기에 따라 내용이 길때 줄이 바뀌어지는데 wbr태그 사용시? 브라우져 크기에 다 담지 못할때 wbr이 지정된 곳에서 줄바꿈해줘라!
+   -> 즉, wbr은 판단을 함 : 내용을 브라우져에 한번에 보여줄수 없을때, 줄바꿈
+ -->
+	<i><b>글자</b></i>
+	<br>
+	<p>
+		본 웹사이트의 고객센터는
+		<mark>1577-6666</mark>
+		입니다.
+	</p>
+	
+	<ruby>
+		키트리
+		<rt>구로에 있습니다.</rt>
+	</ruby>
+	
+	<p>한글과 영문 문장 테스트중입니다. url은 http://www.kitri.re.kr<wbr>/aaaa/bbbb/cccc.html파일명 입니다.</p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

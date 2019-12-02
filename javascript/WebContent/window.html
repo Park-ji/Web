@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+</head>
+<body>
+<button id="open"> 열기 </button>
+<button id="close"> 닫기 </button>
+<button id="screen">화면크기</button>
+<button id="navi">브라우저이름</button>
+<button id="board">게시물목록</button>
+<!-- java script코드의 위치가 중요! 
+button이 만들어진 후에 작동하므로 작성 위치 중요! -->
+<script type="text/javascript">
+var openbtn = window.document.getElementById("open");
+/* 태그 내부의 값을 바꾸는 것 ? innerHtml */
+/* on : ~할때 -> onclick : 클릭할때 */
+openbtn.onclick = function(){
+	newwin = 
+	window.open("board.html","",
+	"width=300px, height=300px left=100px, top=100px");
+	//새창, 새창타이틀명, 새창세부조정(크기, 위치 등)
+}
+
+var closebtn = window.document.getElementById("close");
+closebtn.onclick = function(){
+newwin.close();
+}
+
+
+var screenbtn = window.document.getElementById("screen");
+screenbtn.onclick = function(){
+window.document.write
+("화면크기(가로,세로)="+window.screen.width+","
+		+window.screen.height+"<br>"); //모니터 크기
+window.document.write
+("브라우저크기(가로,세로)="+window.innerWidth+","
+		+window.innerHeight+"<br>");
+		//html이 나타나는 브라우저 바디부분(하얀색)
+window.document.write
+("브라우저크기(가로,세로)="+window.outerWidth+","
+		+window.outerHeight+"<br>");
+		//브라우저 전체크기(바깥 파란색 여백 + url, 타이틀창크기)
+}
+
+var navibtn = window.document.getElementById("navi");
+navibtn.onclick = function(){
+	if(window.navigator.userAgent.indexOf("Trident")>=0){
+		//window.navigator.userAgent : String
+		//indexOf = 해당 string값의 인덱스 값 리턴
+		var bn = "인터넷 익스플로러";
+	}
+	else if(window.navigator.userAgent.indexOf("Chrome")>=0){
+		var bn = "크롬";
+	}
+	else{
+		var bn = "지원하지 않는 브라우저입니다.";
+	}
+	window.document.write("브라우저이름 ="+ bn);
+/* window.document.write
+("브라우저이름="+window.navigator.appName":"
+		+window.navigator.appVersion+"<br>");
+ */
+}
+
+var boardbtn = window.document.getElementById("board");
+boardbtn.onclick = function(){
+	//board.html 이동(버튼 클릭으로 자동으로 바꿔줌-입력값 필요업을때)
+	window.location.href = "board.html";
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

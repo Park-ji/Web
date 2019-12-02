@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script>
+//소수-prime number
+
+var pn = parseInt(prompt("정수를 입력해주세요."));
+var cnt = 0;
+while(true){
+if(!isNaN(pn)){
+ 	for(var i=2;i<=pn;i++){
+		if(pn%i==0) cnt++;
+		if(cnt>1) break;
+/* 		if(cnt>1) {
+		document.write("소수가 아닙니다.");
+		break;
+		}
+		if(i==pn) document.write("소수입니다."); */
+	}
+ 	if(cnt-1) document.write("소수가 아닙니다.");
+ 	else document.write("소수입니다.");
+ 	break;
+ 	//if(cnt==1) document.write("소수입니다.");
+ 	
+	/* for(var i=1;i<=pn;i++){
+		if(pn%i == 0) cnt++;
+	}
+	if(cnt==2){
+		document.write("소수입니다.");
+	}
+	else{
+		document.write("소수가아닙니다.");
+	}  */
+}
+else{
+alert("정수가 아닙니다.");
+var pn = parseInt(prompt("정수를 입력해주세요."));
+}
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

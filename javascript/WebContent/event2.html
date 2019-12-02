@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+</head>
+<body>
+<input type = text id="phone" maxlength="10">
+<div id="result">결과 표시</div>
+<script>
+var phone = document.getElementById("phone");//태그
+//var div = document.getElementById("result").innerHTML;//String
+phone.onkeyup = function(e){
+	//1글자 입력될 때마다 function 실행 -> 숫자인지 check
+	//숫자(0-9)
+	//0 - 48번 아스키코드 문자 / 9 - 57번 / a,A - 65번(html에서는 대소문자 구분 안하기 때문에)
+	alert(e.maxlength);
+	if(e.keyCode >= 48 && e.keyCode<=57){
+		document.getElementById("result").innerHTML = "적합";
+	}
+	else{
+		document.getElementById("result").innerHTML = "부적합";
+	}
+	
+}
+</script>
+</body>
+</html>

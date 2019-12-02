@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<style type="text/css">
+p{
+border : 2px solid red;
+background-color: pink;
+position : relative;
+width : 100px;
+height : 50px;
+/* width, height : 박스 모델의 크기 */
+top : 50px;
+bottom : 50px;
+left : 50px;
+right : 50px;
+}
+p#first{
+z-index: 5;
+}
+div p{
+position : fixed;
+top : 100px;
+left : 100px;
+right : 100px;
+bottom : 100px;
+border : 2px solid blue;
+}
+</style>
+</head>
+<!-- p 태그 기본 display 속성 : block -->
+<body>
+<p id = "first"> 문단1 </p>
+<p> 문단2 </p>
+<p> 문단3 </p>
+<p> 문단4 </p>
+<p> 문단5 </p>
+<div> div <p> p 태그 추가합니다. </p> div</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

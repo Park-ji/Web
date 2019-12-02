@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	var id; //전역변수로 선언해서 다음 두 함수에서 같은 변수사용하게 해줌
+	$('#startbtn').on('click',function(){
+		id = window.navigator.geolocation.watchPosition(success, error); // window생략 가능, id=위치 추적자 id
+	});//startbtn end
+	
+	$('#stopbtn').on('click',function(){
+		//1.
+		window.navigator.geolocation.clearWatch(id); // window생략 가능, clearWatch는 리턴값이 x
+		//2.
+		//$('#startbtn').off('click');//click이벤트 리스너를 off
+		$('#loc').text("위치 추적 중단했습니다.");
+	});//stopbtn end
+});//ready end
+
+function success(position){//position의 의미? 위치정보를 가지고 있는 객체
+	var lat = position.coords.latitude; //내가 있는 곳의 위도
+	var lon = position.coords.longitude;// 경도
+	$('#loc').text("성공!! = 위도 : "+lat+" / 경도 : "+lon);
+}
+function error(e){//e의 의미? 오류정보를 가지고 있는 객체
+	$('#loc').text("오류발생!!!==" + e.code+":"+e.message);//에러 코드 + 메세지(오류가 발생된 원인을 문자열로 보여줌)
+	//단순히 문자열만을 나타내므로 -> html(x), text(o)
+}
+
+</script>
+
+</head>
+<body>
+<input id="startbtn" type=button value="내 위치 추적">
+<input id="stopbtn" type=button value="추적 중단">
+<br>
+
+<div id="loc">여기에 위치추적 결과를 표시합니다.</div>
+</body>
+</html>

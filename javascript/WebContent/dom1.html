@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+</head>
+<body>
+<a id="test" href="b.html">링크문자열</a>
+<a class="choice" href="c.html">링크2문자열</a>
+<a class="choice" href="d.html">링크3문자열</a>
+<h1><a href = "f.html">h1태그내부1</a></h1>
+<h1><a href = "g.html">h1태그내부2</a></h1>
+
+<script type="text/javascript">
+//var a_list = document.getElementsByTagName("a"); //배열 형태로 리턴
+//var a_list = document.getElementsByClassName("choice");
+
+//단일한 태그 하나가 아니라 복합적으로 사용하려면? document.querySelector("css selector 문법")
+var a_list = document.querySelector("h1 a");
+//1개만 리턴(여러개 있어도 처음것을 리턴함)
+var a_list = document.querySelectorAll("h1 a");
+//여러개를 리턴(배열로 리턴)
+a_list[1].innerHTML="e.html로 이동";
+a_list[1].href="e.html";
+a_list[1].style.color="red";
+a_list[1].style.backgroundColor="green"; 
+//변수명에 두개 단어가 합친 단어를 표시할때 '-'은 못함, 대문자로 구분(Camel Case 규칙)
+for(var i=0;i<a_list.length;i++){	
+document.write("<h3>"+a_list[i].tagName+"</h3>");//배열 index 필요
+document.write("<h3>"+a_list[i].href+"</h3>");
+document.write("<h3>"+a_list[i].innerHTML+"</h3>");
+}
+
+//id test 태그 선택
+var o  = document.getElementById("test");
+//변수 o 타입? DOM객체 형태 - HTMLElement 형태
+//var o  = document.getElementById("test").innerHTML = o.innerHTML//STRING
+// 선택 태그 다음 태그가 무엇인가?
+//1.
+//o.nextSibling//현재 태그들 중에서 같은 다음 태그를 알수 있음 - 형제자매관계
+//2.
+//var h1 = dcument.getElementsByTagName('h1'); //HTMLElement 배열
+//h1[0].firstChild//나의 첫번째 자식
+//h1[0].firstChild.innerHTML//첫번째 자식의 내용
+//h1.parent? body(부모)
+		
+/* var a = document.getElementById("test");
+document.write("<h3>"+a.tagName+"</h3>");
+document.write("<h3>"+a.nodeType+"</h3>");
+document.write("<h3>"+a.href+"</h3>");
+document.write("<h3>"+a.innerHTML+"</h3>"); */
+</script>
+</body>
+</html>

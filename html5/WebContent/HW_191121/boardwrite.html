@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<style>
+.ta{padding:5px;}
+</style>
+</head>
+<body>
+<h1>글쓰기</h1>
+<form action="boardwritesuccess.html">
+제목
+<input type="text">
+<br>
+<table cellspacing="0" cellpadding="0" >
+<tr>
+<td align="left" valign="top">내용</td>
+<td class="ta"><textarea rows="3" cols="60"></textarea></td>
+</tr>
+</table>
+작성자
+<input type="radio" name="user" value="oracle">oracle
+<input type="radio" name="user" value="jsp">jsp
+<input type="radio" name="user" value="spring">spring
+<br>
+암호
+<input type="password"><br><br>
+<input type="submit" value="글쓰기 완료">
+<input type="reset" value="초기화" name="ret">
+</form>
+
+</body>
+</html>

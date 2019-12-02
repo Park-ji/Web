@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+</head>
+<body>
+<h1>마우스 선택 폼</h1>
+<form>
+수강신청 과목 선택(단일개)<br>
+<input type="radio" name="title" value="자바" checked="checked"> 자바<br>
+<input type="radio" name="title" value="sql"> sql<br>
+<input type="radio" name="title" value="android"> android<br>
+<input type="radio" name="title" value="spring"> spring<br>
+<input type="radio" name="title" value="jsp"> jsp<br>
+<br>
+<br>
+수강신청 과목 선택(복수개)<br>
+<input type="checkbox" name="title2" value="자바"> 자바<br>
+<input type="checkbox" name="title2" value="sql"> sql<br>
+<input type="checkbox" name="title2" value="android"> android<br>
+<input type="checkbox" name="title2" value="spring" checked="checked"> spring<br>
+<input type="checkbox" name="title2" value="jsp" checked="checked"> jsp<br>
+<br>
+<input type="hidden" name="admin" value="system">
+<!-- hidden : 사용자의 입력을 받을 수 없기 때문에 지정된 값을 가지고 있어야함 
+즉, 브라우져에 보여지지 않으면서 서버에 값을 전송해야할때 사용(사용자가 수정할 수 없는 값!이지만 서버에 전송해야하는 데이터)-->
+<br>
+수강신청과목선택(드롭다운)<br>
+<select name="title3" multiple>
+<option>자바</option>
+<option>sql</option>
+<option selected="selected">android</option>
+<option>spring</option>
+<option>jsp</option>
+</select>
+<br>
+<br>
+<!-- 
+* name은 변수명 id는 태그의 이름 
+* input의 list속성은 text타입일때(키보드 입력받을때) 만들어놓은 list로 시작하게 한다 => '자동완성'같이
+-->
+<input type=text name="major" list="majorList">
+<datalist id="majorList">
+<option>컴퓨터</option>
+<option>영어</option>
+<option>체육</option>
+</datalist>
+
+
+<input type="submit" value="전송">
+<input type="reset" value="초기화">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

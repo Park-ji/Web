@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script type="text/javascript">
+var sum = 0; //초기화 안해주면 undefined임
+//지역변수 
+//멤버변수=field변수 : 초기화 안해줘도 0으로 초기화됨
+var br = "<br>";
+var tab = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+for(var i=1;i<=10;i++){
+	sum += i;
+	document.write(i+br);
+}
+document.write("총합 : "+ sum+br+br);
+document.write("구구단"+br);
+document.write("<table>");
+for(su=1;su<=9;su++){
+	document.write("<tr>");
+for(dan=2;dan<=9;dan++){
+	if(dan==5) break;
+	document.write("<td>");
+	//document.write("<pre>"+dan+"*"+su+"="+(dan*su)+"	"+"</pre>");
+	document.write(dan+"*"+su+"="+(dan*su));
+	document.write("</td>");
+}
+//document.write(br);
+document.write("</tr>");
+}
+document.write("</table>");
+</script>
+<style>
+pre{
+display: inline;
+}
+table{
+border : 2px solid blue;
+margin : auto;
+}
+td{
+border : 2px solid green;
+text-align: center;
+font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+</body>
+</html>

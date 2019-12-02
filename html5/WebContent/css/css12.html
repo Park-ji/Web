@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<!-- <script type="text/javascript">
+alert(screen.width+":"+screen.height);
+</script> -->
+<style type="text/css">
+/* 
+기본 배경색은 : 노랑색
+접속한 기기가 width가 500px이하이면(ex, phone)? 배경색은 회색으로 보이기
+ */
+body{
+background-color: yellow;
+}
+img{
+border : red solid 1px;
+width:600px;
+height:300px;
+}
+/* 
+- screen 이면서 조건 추가할때? and 
+- width:500px? 정확인 가로가 500일때
+- orientation:portrait? 
+   세로로 볼때만(즉, 가로크기보다 세로크기가 클때)
+- orientation:landscape?
+   가로로 볼대만(즉, 가로크기가 세로크기보다 클때)
+*/
+@media screen
+and (max-width: 500px) 
+and (min-width: 300px) 
+/* and (orientation: landscape) */{
+body{background-color: silver;}
+/* img{width:100px;height: 100px;} */
+img{display: none;}
+}
+/* 프린트할때 적용 */
+@media print{
+body{background-color: silver;}
+}
+</style>
+</head>
+<body>
+<h1>미디어쿼리 연습중</h1>
+<img src="../images/html5.jpg">
+</body>
+</html>

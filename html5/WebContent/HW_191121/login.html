@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+<style type="text/css">
+table {
+	margin: auto;
+	border: 2px solid red;
+	border-collapse: collapse;
+/* 	text-align: center; */
+}
+
+td {
+	border: 2px solid red;
+/* 	border-collapse: collapse; */
+}
+
+tr:last-child{
+display: none;
+}
+
+input[value="로그인"]{
+display:block;
+margin:auto;
+}
+/* auto 속성의 의미? 브라우져한테 자동으로 계산하라고 하는 의미
+브라우져가 auto로 위치 계산하는 방법
+1. 크기 지정되어있는지?
+2. display속성은 무엇인지?
+=> display속성이 inline이므로 margin계산을 못함 */
+</style>
+</head>
+<body>
+	<form action="">
+		<table>
+			<tr>
+				<td>아이디</td>
+				<td><input type=text></td>
+			</tr>
+			<tr>
+				<td>암호</td>
+				<td><input type=password></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input id="login" type=submit value="로그인">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type=submit value="로그아웃">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

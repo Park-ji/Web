@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script >
+$(document).ready(function(){
+	$('textarea').on('keyup', function(){
+		var str_len = $(this).val().length;
+        var remain_len = 10 - str_len;
+		$('h1').text(remain_len);
+		$('h2').text('글자 남았습니다.');
+		//남은 글자수 0이면 textarea에 더이상 입력 불가능 처리
+		// 속성 readonly=readonly 
+		if(remain_len == 0){
+			$(this).attr("readonly" , "readonly");
+			$('h2').text('입력 불가능합니다');
+		}
+	});//keyup on end
+//2. 새로 입력 버튼 클릭시 
+//textarea 입력내용 삭제
+//textarea readonly 속성 삭제(removeAttr(속성명) )
+$('input:button').on('click', function() {
+	$('textarea').val("");
+	$('textarea').removeAttr("readonly");
+});//click on end
+	
+});//ready end
+
+</script>
+</head>
+<body>
+<h1 style="display:inline"> 10 </h1>
+<h2 style="display:inline"> 글자 입력 가능합니다 </h2>
+<textarea rows=5 cols=100>
+
+</textarea>
+<!-- 1. 새로입력 버튼 생성 -->
+<input type=button value="새로입력">
+
+</body>
+</html>
+
+
+

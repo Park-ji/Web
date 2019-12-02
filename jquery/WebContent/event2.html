@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	//문서 완료 직후
+	var img_list = ["/html5/images/html5.jpg", 
+		"/html5/images/android.jpg",
+		"/html5/images/google.png",
+		"/html5/images/iphone.png",
+		"/html5/images/smallgoogle.png" ];
+	for(var i = 0; i < img_list.length; i++){
+	$('div#image').append
+	('<img src=' img_list[i] + ' width=100 height=100');
+	}
+	
+	$('div#image').on ('click', 'img', function(){/*이벤트처리*/   });
+	
+	
+	
+ $('div h1').on('mouseover', function(){
+	 $(this).css('color', 'red');
+	 $(this).css("border", "2px solid blue");
+ });//mouseover end
+
+ $('div h1').on('mouseout', function(e){
+	 $(this).css('color', 'black');
+	 $(this).css("border", "2px solid silver");
+	 $("#result").html("마우스 x좌표=" + e.pageX + " , y좌표=" + e.pageY);
+	 //e.preventDefault();// 기본동작 방지( a태그 submit, reset)
+	 //e.stopPropagation(); //부모태그 이벤트 전파 방지
+	 
+ });//mouseout end
+ 
+/*  $('img').on('mouseover', function(){
+	// $(this).css('width', '300px');
+	// $(this).css("height", "300px");
+	 $(this).attr("width", "300");
+	 $(this).attr("height", "300");
+	 
+ });//mouseover end */
+
+ 
+ 
+ //img:first , id가 i 
+ //mouseover 되면 가로 300 세로 300 확장
+ //mouseout 되면 가로 100 세로 100 확장
+ 
+ $("#i").on('mouseover', function (){
+	 //$(this).css('width',"300px");
+	 //$(this).css('height',"300px");	
+	 $(this).attr('width', '500');
+	 $(this).attr('height','500');
+ });
+ 
+ $("#i").on('mouseout', function (){
+	 $(this).attr('width',"100");
+	 $(this).attr('height',"100");	 
+ });
+ 
+ //hide|remove|empty -  html | append 
+//5개 이미지 클릭하면 현재 클릭한 이미지 화면 끝 이동
+//on : 이벤트핸들러함수 : $(this).jquery함수 
+$('img').on('click', function(){
+	//$('body').append(this);
+	//$('body').append( $(this).clone() );//클릭했던 태그 바디에 추가
+	//$('body').append
+	//('<img src="/html5/images/html5.jpg" width=100 height=100 >');
+	//클릭했던 태그 바디에 추가	
+	
+	//클릭했던 태그 바디에서 삭제
+	//$(this).remove();
+	
+});
+});//ready end
+
+
+</script>
+
+</head>
+<body>
+<div><h1> 여기에 마우스를 올려보세요</h1> </div>
+<div id="result"></div>
+<div id="image">
+<!-- <img src="/html5/images/html5.jpg" width=100 height=100 >
+<img src="/html5/images/android.jpg" width=100 height=100 >
+<img src="/html5/images/google.png" width=100 height=100 >
+<img src="/html5/images/iphone.png" width=100 height=100 >
+<img src="/html5/images/smallgoogle.png" width=100 height=100 > -->
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

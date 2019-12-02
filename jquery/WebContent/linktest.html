@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+/* 	var daum = $('a:first').attr('href');
+	var jqueryobject = $('a:first'); //jquery 객체
+	$("a:gt(0)").attr("href",jqueryobject.attr("href")); */
+	
+	//body태그 내부 마지막 a태그
+	//아래와 같은 경우 : 문자열 내부에 ""이 포함되어 있기 때문에
+	//1) "은 \"로 가능
+	//2) ''로 감싸기
+	//아래는 원래 body에 뭐가 있든간에 다음의 text값으로 바꿔라
+	//$("body").text('<a href="http://io.spring.org">spring</a>');
+	//아래는
+	//$('body').text()는 원래 있던 body값 읽어옴 
+	/* $("body").text($('body').text()
+			+'<a href="http://io.spring.org">spring</a>'); */
+	//text함수는?
+	//단순히 문자열만을 출력
+	
+	//html함수는?
+	//태그가 있으면 태그역할을 함
+/* 	$("body").html($('body').html()
+			+'<a href="http://io.spring.org">spring</a>');
+			 */
+	//이때 div태그 앞에 추가하고 싶으면?
+	//$('div').before('<a href="http://jquery.com">jquery</a>');
+	//$('a:last').after('<a href="http://jquery.com">jquery</a>');
+	
+	//특정 내부 마지막 위치 포함시? body에 원래 있던 내용을 다시 읽어오는것은 비효율
+	//$('body').append('<a href="http://jquery.com">jquery</a><br>');
+	
+	//ex, div 태그 내부에 a href 값 줄바꿈 출력
+
+	//getter용도일때?
+	//다 똑같은 내용일때? jquery는 반복문 사용 x
+	//다 다른 내용일때? jquery 반목문 사용
+/* 	$('a').each(function(index){
+		$('div').append($(this).attr("href")+"<br>");	
+	}); */
+	
+	var alist = $('a');
+	//alert(alist.length);
+	for(var i=0; i<alist.length;i++){
+		$('div').append("사이트명="+$(alist[i]).html()+
+				", url="+$(alist[i]).attr("href")+"<br>");	
+	}
+	
+	//h1 태그 화면 5초후(setTimeout-1000분의 1초 단위) 감추자
+	//즉, setTimeout(함수, 5000);
+	
+	//$('h1').hide();
+	$('h1').hide(5000);//5초동안 서서히 감춰지는 효과 
+	//- slideUp(5000), fadeOut(5000)
+	$('h1').show(5000);//5초동안 서서히 나타나는 효과 
+	//- slideDowm(5000), fadeIn(5000)
+	//이런 기능? 버튼 이벤트 처리와 같이 쓰기 위해서
+});
+</script>
+</head>
+<body>
+<h1>포털 사이트 링크합니다</h1>
+<a href="http://www.daum.net">다음</a><br><!-- domain이름으로 접근 가능 -->
+<a href="http://www.naver.com">네이버</a><br>
+<a href="http://www.google.com">구글</a><br>
+<a href="http://www.oracle.com">오라클</a><br>
+<a href="http://jquery.com">jquery</a><br>
+<a href="http://io.spring.org">spring</a><br>
+<br><br><br>
+<div></div>
+<!-- 
+'결과표시'
+1. dom객체일때? innerHTML
+2. jquery? text() 또는 html()
+ -->
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script type="text/javascript">
+br = "<br>"
+num1 = parseInt(prompt("숫자를 입력해주세요."));
+op = prompt("+ - * / \n원하는 연산수식을 선택해주세요.");
+num2 = parseInt(prompt("숫자를 입력해주세요."));
+document.write(
+op=="+"?num1+num2
+:(op=="-"?num1-num2
+:(op=="*"?num1*num2
+:(op=="/"?((num2!=0)?num1/num2:"나누는 수는 0이 될수 없습니다.")
+:"잘못된 연산수식을 선택했습니다.")))		
+);
+//pattern 표현식 사용해도 가능
+</script>
+</head>
+<body>
+
+</body>
+</html>

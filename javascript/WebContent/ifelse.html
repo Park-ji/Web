@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script type="text/javascript">
+var kor = parseInt(prompt("국어점수 입력"));
+var eng = parseInt(prompt("영어점수 입력"));
+var mat = parseInt(prompt("수학점수 입력"));
+var sum = kor+eng+mat;
+var avg = sum/3;
+//num.toFixed(3) : 소수점 3자리수까지 나타냄(반올림함)
+var avg2 = parseInt(avg);
+var br = "<br>";
+var sp = "&nbsp;";
+var tab = "&nbsp;&nbsp;&nbsp;&nbsp;";
+if(kor>=0&&kor<=100&&eng>=0&&eng<=100&&mat>=0&&mat<=100){
+document.write("국어 : "+ kor+tab+"영어 : "+eng+tab+ "수학 : "+mat+br);
+document.write("총점 = "+sum+br+"평균(소수점이하 표시)="+avg+br);
+document.write("평균(정수)="+avg2+br);
+//등급 : 조건문
+var grade; //undefined
+if(avg2 >= 90 ){
+	grade = "A"; //이중 따옴표, 단일 따옴표 상관 x
+}
+else if(avg2>=80){ //avg2>=80 && avg2<90
+	grade = "B";
+}
+else if(avg2>=70){
+	grade = "C";
+}
+else{
+	grade = "낙제";
+}
+document.write("등급 : " + grade);
+}
+else{
+	alert('점수는 0-100사이만 입력 가능합니다.');
+}
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

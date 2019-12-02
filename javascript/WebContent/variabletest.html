@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script type="text/javascript">
+var a = 10;
+a="변경";
+var b = 3.14;
+var c = 'a';//'aaaa',"aaaa"
+var d = "java script";
+var e = true; //false
+var f; //undefined
+//alert(f); //대소문자 구분, undefined
+
+//var 키워드만 존재, 애매모호해서 규칙을 부여해 'let'만듦
+let h = 20;
+var j = 30;
+//let h = 20*20; //let을 한번 더 선언하면 ? error : Identifier 'h' has already been declared
+var j = 30*30; //java script는 var로 선언하고 다시 한번 더 선언해도 ok
+//alert(h+":"+j);
+
+const k = 40;
+//const k = 40*40; // error : Identifier 'k' has already been declared
+//k = 40*40; // error : Assignment to constant variable.
+//alert(k);
+
+var x = 100;
+var y = "100";
+var z = '100';
+document.write(x+":"+y+":"+z+"<br>");
+//var는 중간에 타입을 바꿀수 있기 때문에
+//타입 확인을 해줌 : typeof 변수명, typeof(변수명)
+document.write(typeof(x)+":"+typeof(y)+":"+typeof(z)+"<br>");
+//변환
+//1) 'String-->정수'로 변환 : parseInt(y)
+var yy = parseInt(y);
+document.write(yy+":"+typeof(yy)+"<br>");
+var y2 = "3.14";
+var yy2 = parseFloat(y2); //paseFloat : strign->정수
+//var yy2 = parseInt(y2); //trunc
+document.write(yy2+":"+typeof(yy2)+"<br>");
+
+//2) number->string 변환
+var y3 = 100;
+var yy3 = String(y3);
+document.write(yy3+":"+typeof(yy3)+"<br>");
+
+//error : NaN (Not a Number)
+//but, "3.14abc"일때는 되는 이유? javascript는 앞에서부터 문법검사를 하기 때문에
+var y4 = "abc3.14";
+var yy4 = parseFloat(y4);
+document.write(yy4+":"+typeof(yy4)+"<br>");
+document.write(isNaN(y4)+"<br>");//isNaN : 내장함수
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script>
+fuction send(){
+	var search = document.list.search.value;
+	document.location.href="boardsearch.html?search="+search;
+}
+</script>
+<style>
+body{
+background: url("../images/iphone.png") no-repeat 50% 50%;
+background-color: aqua;
+}
+h1{
+border : solid 3px blue;
+box-shadow: -5px -5px 5px red;
+border-radius: 30px;
+text-align: center;
+width: 400px;
+margin-left:auto;
+margin-right:auto;
+color: green;
+text-shadow: 5px 5px 5px green;
+}
+table{
+margin :auto;
+border-collapse: collapse;
+}
+td, th{
+border : 3px pink solid;
+text-align : center;
+}
+th{
+background-color: silver;
+}
+a.title{
+text-decoration: none;
+}
+.test{
+text-align: center;
+}
+
+</style>
+</head>
+<body>
+<form action="boardsearch.html" name="list" method="get">
+<h1>boardlist를 출력합니다.</h1>
+<select>
+<option>제목</option>
+<option>내용</option>
+<option>작성자</option>
+</select>
+검색어:<input type="text" name="search">
+<input type="submit" value="검색">
+<!-- <input type="button" value="검색" onclick="send()"> -->
+<br>
+<br>
+<table border="2">
+<tr>
+<th>번호</th>
+<th>제목</th>
+<th>작성자</th>
+<th>조회수</th>
+</tr>
+<tr>
+<td>1</td>
+<td><a class=title href="boarddetail.html">제목1</a></td>
+<td>작성자1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a class=title href="boarddetail.html">제목2</a></td>
+<td>작성자2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a class=title href="boarddetail.html">제목3</a></td>
+<td>작성자3</td>
+<td>11</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a class=title href="boarddetail.html">제목4</a></td>
+<td>작성자4</td>
+<td>22</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a class=title href="boarddetail.html">제목5</a></td>
+<td>작성자5</td>
+<td>11</td>
+</tr>
+</table>
+<br>
+<h3 class=test>페이지번호</h3>
+
+<div class = test>
+<a href="boardlist.html">1</a>&nbsp;&nbsp;
+<a href="boardlist.html">2</a>&nbsp;&nbsp;
+<a href="boardlist.html">3</a>&nbsp;&nbsp;
+<a href="boardlist.html">4</a>&nbsp;&nbsp;
+<a href="boardlist.html">5</a>&nbsp;&nbsp;
+</div>
+<a href="boardwrite.html">글쓰기</a>
+</form>
+</body>
+</html>

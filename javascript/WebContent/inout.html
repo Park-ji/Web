@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script type="text/javascript">
+//1. 팝업형태 출력
+alert('팝업\n다음줄');
+//2. 브라우저 콘솔 출력(브라우저-개발자도구-console창에서 확인 가능)
+console.log('콘솔\n출력');
+//3. 브라우저 바디 출력
+document.write('<h1>브라우저\n<br>바디 출력</h1>');
+//= 브라우저 바디에서는 '\n'이 정상 작용 x
+//이유? 브라우저 바디는 'html태그를 출력하는 곳'이므로 '\n' x
+//즉, 위의 2개는 태그가 작용 x(태그를 태그로 해석하는 곳? 바디)
+
+
+//4. 팝업형태 출력/입력(2선택), 입력(문자열 정보)
+var a = alert('팝업'); //확인 버튼만 생성, 리턴값은 없음(void)
+var c = confirm("처리하시겠습니까?");
+//사용자가 작업한 내용에 대한 확인 or 취소
+//확인시? true리턴 & 취소시? false리턴
+var b = "<br>";
+document.write(a+b+c+b);
+//writeln은 브라우저에서 줄바꿈해주는 것이 x
+s = prompt("이름을 입력하세요"); // 자바의 Scanner(입력-키보드)
+//리턴값 있음
+document.write(s+b);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

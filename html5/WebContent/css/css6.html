@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- 권장사항 : 태그는 태그대로 스타일은 스타일대로 구현하는 것 -->
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<style>
+table{
+/* border-style: solid;
+border-color: blue;
+border-width: 3px; */
+width : 300px;
+height : 300px;
+border : solid 3px blue;
+box-shadow : -5px -5px 5px red; /*음영 css*/
+border-radius : 30px; /*모서리 css*/
+/* border-collapse: collapse; *//* 여백 없앰 = 선 겹쳐서 하나로 보임(테이블에서) 즉, 녹색 선만보임(td꺼) */
+/* margin-left: auto;
+margin-right: auto; */
+margin : auto;
+/* body 세로로 어떤 컨텐츠가 올지 모르기 때문에 추가될수록 알아서 계속해서 중앙정렬 해줄것임ㅎ */
+/* margin : top bottom right left(시계방향)  */
+empty-cells: show;
+/* 없는 셀은 기본적으로는 보이지 x / inherit는 상속의 의미지만 그냥 default라고 생각하면 편함 */
+}
+td{
+/* border-style: solid;
+border-color: green;
+border-width: 3px; */
+border : 3px green solid ;
+/* border-collapse: collapse; */
+text-align: center;
+vertical-align: bottom;
+}
+
+</style>
+</head>
+<body>
+<table id=t>
+<tr><td>번호</td><td>제목</td><td>작성자</td><td>조회수</td></tr>
+<tr><td>1</td><td><a href="boarddetail.html">제목1</a></td><td>작성자1</td><td>11</td></tr>
+<tr><td>2</td><td><a href="boarddetail.html">제목2</a></td><td>작성자2</td><td>55</td></tr>
+<tr><td>3</td><td><a href="boarddetail.html">제목3</a></td><td>작성자3</td><td>0</td></tr>
+<tr><td>4</td><td><a href="boarddetail.html">제목4</a></td><td>작성자4</td><td>1</td></tr>
+<tr><td>5</td><td><a href="boarddetail.html">제목5</a></td><td>작성자5</td><td>100</td></tr>
+<tr><td>감사합니다.</td><td></td><td></td><td></td></tr>
+</table>
+<p></p>
+</body>
+</html>

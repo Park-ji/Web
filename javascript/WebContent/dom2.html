@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+</head>
+<body>
+	<form id="f" action="Loginserver.jsp">
+		아이디 : <input type=text id="id"><br> 
+		암호 1: <input type="password" id="pw1"><br> 
+		암호 2: <input type="password" id="pw2"><br> 
+		<input type="button" value="로그인" id="btn">
+		<script type="text/javascript">
+			//2개 값 입력
+			//id는 java or script or html 중에 하나여야함 : pattern 속성으로 정하기 어렵
+			//pw1, pw2 같은지 조사함
+			//만족하면 로그인버튼 클릭시, action으로 이동한다
+			//var login = document.getElementById('btn');
+			//var login = document.querySelector("input[type=button]");
+			var login = document.querySelector("input[value=로그인]");
+			//login : 이벤트 타겟
+			//onclick : 이벤트 타입
+			//function(){...} : 이벤트 핸들러
+			//-이벤트 핸들러는 정의만 해두면 된다
+			login.onclick = function() {
+				//alert(111);
+				//id, pw1, pw2 dom 객체 읽어온다음 제한조건 검사
+				//alert(f.action);
+				var id = document.getElementById("id").value;
+				//value속성 => input태그에 입력된 값
+				var pw1 = document.getElementById("pw1").value;
+				var pw2 = document.getElementById("pw2").value;
+				var idlist = [ 'java', 'script', 'html', 'oracle', 'spring',
+						'android' ];
+				var condition1 = false;
+				var condition2 = false;
+
+				for (var i = 0; i < idlist.length; i++) {
+					if (id == idlist[i]) {
+						condition1 = true;
+						break;
+					} else {
+						codition1 = false;
+					}
+				}
+
+				if (pw1 == pw2) {
+					condition2 = true;
+				}
+				if (condition1 && condition2) {
+					//location.href = document.getElementById("f").action;
+					//위와 같은 역할
+					document.getElementById("f").submit();
+				}
+				//submit은 form에 입력된 내용을 가지고 action을 감
+				//만약 애초에 button이 아니라 submit으로만 만들면? 입력내용을 검사하지 못함
+			};
+		</script>
+	</form>
+</body>
+</html>

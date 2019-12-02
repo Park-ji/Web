@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+</head>
+<body>
+<h1> 제목1 </h1>
+<h2> 제목2 </h2>
+<h3> 제목3 </h3>
+<h4> 제목4 </h4>
+<h5> 제목5 </h5>
+<h6> 제목6 </h6>
+<a href = "a.html">이동</a>
+<!-- div와 a이벤트가 동시에 있을때?
+모든 태그들은 부모자식간의 관계를 가질 수 있음
+- 이때, 자식태그의 이벤트가 먼저 발생하고 - 부모태그의 이벤트가 발생
+ -->
+<div style="width:200px;border:2px solid blue">
+<a style="width:100px;border:2px solid red";href = "b.html">이동</a>
+</div>
+	<form id="f" action="Loginserver.jsp">
+		아이디 : <input type=text id="id"><br> 
+		암호 1: <input type="password" id="pw1"><br> 
+		암호 2: <input type="password" id="pw2"><br> 
+		<input type="submit" value="로그인" id="btn">
+	</form>
+<script>
+var h1 = document.getElementsByTagName("h1")[0];//배열 인덱스가 빠지면 안됨
+h1.onclick = function(){
+	h1.style.color = "red";
+	h1.style.backgroundColor = "silver";
+	h1.innerHTML = "클릭했습니다.";
+}
+var a = document.getElementsByTagName("a")[0];
+a.onclick = function(e) //함수에 변수지정하면 이벤트에 관련된 정보를 담고 있음
+{
+	alert("a태그 클릭");
+	e.preventDefault(); //e:임의의 변수명(이벤트 핸들러 동작 의미) - 아무거나 주면 ok
+	//preventDefault() : 원래 이 태그가 가지고 있던 이벤트 핸들러는 취소해라
+}
+//event source : a
+//event type : click
+//event 정보 제공 객체 내장 전달 추가: event handler 함수 매개변수
+
+var a = document.getElementsByTagName("a")[1];
+a.onclick = function(e) //함수에 변수지정하면 이벤트에 관련된 정보를 담고 있음
+{
+	alert("1.(자식)a태그 클릭");
+	e.preventDefault(); //e:임의의 변수명(이벤트 핸들러 동작 의미) - 아무거나 주면 ok
+	//preventDefault() : 원래 이 태그가 가지고 있던 이벤트 핸들러는 취소해라
+	e.cancelBubble=true;
+}
+
+var div = document.getElementsByTagName("div")[0];
+div.onclick = function(e) //함수에 변수지정하면 이벤트에 관련된 정보를 담고 있음(이벤트 객체)
+{
+	alert("2.(부모)div 태그 클릭");
+}
+
+//var sub = document.querySelector("input[type=submit]"); // - x : submit에 대한 이벤트 처리는 form을 읽어와야한다.
+var form = document.getElementById("f");
+//submit이벤트 처리 : onsubmit
+form.onsubmit = function(e){
+	alert("submit");
+	e.preventDefault();
+}
+
+sub.onclick = function(e){
+	
+}
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
