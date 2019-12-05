@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>startservlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+
+  <!-- servlet 웹 서버 등록 방법 2 : 2.5버전 -->
+  <servlet>
+  <servlet-name>f</servlet-name>   <!-- 밑의 class 이름을 지어줌  -->
+  <servlet-class>test.FirstServlet</servlet-class>  <!-- 실제패키지명.클래스명 -->
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>f</servlet-name>   <!-- 정의된 이름을 활용해서 조회하게 똑같은 이름으로 작성 -->
+  <url-pattern>/second</url-pattern>   <!-- (http://ip://port/현재 프로젝트명): 생략가능 /first -->
+  </servlet-mapping>
+    <!-- 즉, /first가 들어오면 이름 조회하고 그 이름에 맞는 클래스를 찾아감 : servlet-mapping -> servlet이 필요 -->
+  <servlet>
+  <servlet-name>s</servlet-name>   <!-- 밑의 class 이름을 지어줌  -->
+  <servlet-class>test.SuccessServlet</servlet-class>  <!-- 실제패키지명.클래스명 -->
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>s</servlet-name>   <!-- 정의된 이름을 활용해서 조회하게 똑같은 이름으로 작성 -->
+  <url-pattern>/success</url-pattern>   <!-- (http://ip://port/현재 프로젝트명): 생략가능 /first -->
+  </servlet-mapping>
+    
+</web-app>

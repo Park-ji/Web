@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content = "width=device-width, initial-scale=1.0"/>
+<title>Insert title here</title>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+$(document).ready(function(){
+	
+});//ready end
+</script>
+</head>
+<body>
+<form action="logindb" method="get">
+<!-- 이때 : '/logindb'라고 사용하면 x 
+1) (현재파일기준)logindb
+2) (서버정보)/logindb -> 서버 정보 : http://ip:port
+-->
+아이디<input type ="text" name="id"><br>
+암호<input type="password" name="pw"><br>
+<input type="submit" value="로그인">
+</form>
+
+</body>
+</html>
