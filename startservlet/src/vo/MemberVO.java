@@ -60,6 +60,7 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
+
 public String getPhone() {
 	return phone;
 }
@@ -77,6 +78,11 @@ public String getIndate() {
 }
 public void setIndate(String indate) {
 	this.indate = indate;
+}
+
+@Override
+public String toString() {
+	return id+":"+pw+":"+name+":"+phone+":"+email+":"+indate;
 }
 
 }

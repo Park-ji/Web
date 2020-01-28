@@ -25,6 +25,30 @@ public class MemberDAO {//Data Access Object
 	//**ConnectionPool 사용방법? ConnectionPoolServlet2 참고
 	// 전역으로 선언한 다음 각각의 메서드 안에 connection만 연결해줌
 
+	public int inMember(MemberVO vo) { //boardwrite할때 BoardDAO.insert..함수에서 
+		int result  = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:xe","hr","hr");
+			String sql = "select id from member where id=?";
+			//대소문자 구분시 -> upper함수 사용 : "select id,pwd from member where upper(id)=upper(?)"
+			//sql문장에서 아직 정해지지 않은 값을 물음표(?)로 표시하는 바인딩 변수 사용
+			PreparedStatement pt = con.prepareStatement(sql); //sql하려고 준비함
+			pt.setString(1, vo.getId()); //첫번째 물음표에 id값을 set
+			ResultSet rs = pt.executeQuery();//결과 받아오기
+
+			if (rs.next()) { // id 존재
+				result = 1;
+			}
+			rs.close();
+			pt.close();
+			con.close();
+			}catch(Exception e) { 
+				e.printStackTrace();
+			}
+		return result; 
+	
+	}
 	
 	public int getMember(MemberVO vo) {
 		int result  = 0;
