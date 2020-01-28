@@ -1,0 +1,4 @@
+클라이언트ip:0:0:0:0:0:0:0:1
+접속시간:Thu Dec 05 17:46:56 KST 2019
+호출했던 uri :/startservlet/clientlog.jsp
+브라우저 이름 : Chrome
